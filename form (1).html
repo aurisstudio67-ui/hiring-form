@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auris Studio Recruitment Interview Introduction</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --text: #37352f;
+        --muted: #777672;
+        --line: rgba(61, 59, 53, 0.16);
+        --soft-line: rgba(61, 59, 53, 0.08);
+        --placeholder: #aaa8a4;
+        --focus: rgba(58, 152, 255, 0.36);
+        --button: #000000;
+        --button-hover: #37352f;
+        --bg: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(700px, calc(100vw - 50px));
+        margin: 0 auto;
+        padding: 50px 0;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 0 44px;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at 32% 28%, #f6d791 0 16%, transparent 17%),
+          linear-gradient(135deg, #111111, #4b4036 58%, #a97035);
+        color: #ffffff;
+        font-size: 1.45rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        box-shadow: rgba(0, 0, 0, 0.14) 0 14px 30px;
+      }
+
+      h1 {
+        margin: 0;
+        padding-bottom: 2.5rem;
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 0;
+      }
+
+      p {
+        margin: 0 0 18px;
+        color: var(--text);
+      }
+
+      form {
+        margin-top: 18px;
+      }
+
+      .name-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 28px 0 14px;
+      }
+
+      .field,
+      .question {
+        margin-bottom: 18px;
+      }
+
+      label,
+      .question-title {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 5px;
+        padding: 1.25rem 0 0.625rem;
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .name-row label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+
+      .required {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        min-height: 36px;
+        border: 0;
+        border-radius: 8px;
+        outline: none;
+        background: #ffffff;
+        color: var(--text);
+        font: inherit;
+        padding: 8px 10px;
+        box-shadow:
+          rgba(0, 0, 0, 0.12) 0 1px 1px 0,
+          var(--line) 0 0 0 1px,
+          var(--soft-line) 0 2px 5px 0;
+        transition: box-shadow 120ms ease;
+      }
+
+      textarea {
+        min-height: 64px;
+        resize: vertical;
+      }
+
+      input:hover,
+      select:hover,
+      textarea:hover {
+        box-shadow:
+          rgba(0, 0, 0, 0.12) 0 1px 1px 0,
+          var(--line) 0 0 0 1px,
+          var(--soft-line) 0 3px 9px 0,
+          var(--soft-line) 0 2px 5px 0;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        box-shadow:
+          var(--focus) 0 0 0 4px,
+          var(--line) 0 0 0 1px;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--placeholder);
+      }
+
+      input[type="file"] {
+        min-height: auto;
+        cursor: pointer;
+      }
+
+      select {
+        appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+          linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+        background-position:
+          calc(100% - 18px) 16px,
+          calc(100% - 12px) 16px;
+        background-repeat: no-repeat;
+        background-size: 6px 6px;
+        padding-right: 34px;
+      }
+
+      h2 {
+        margin: 34px 0 2px;
+        padding: 1.25rem 0 0.625rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 28px 0 18px;
+      }
+
+      button {
+        height: 36px;
+        border: 0;
+        border-radius: 8px;
+        background: var(--button);
+        color: #ffffff;
+        cursor: pointer;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 0 0.9em;
+        transition: background 120ms ease, outline 120ms ease;
+      }
+
+      button:hover {
+        background: var(--button-hover);
+      }
+
+      button:focus-visible {
+        outline: 4px solid var(--focus);
+      }
+
+      .message {
+        color: var(--muted);
+        font-size: 0.95rem;
+        min-height: 24px;
+      }
+
+      .thanks {
+        display: none;
+        margin: 36px 0 0;
+      }
+
+      .thanks h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      form.submitted .form-content,
+      form.submitted .actions {
+        display: none;
+      }
+
+      form.submitted .thanks {
+        display: block;
+      }
+
+      @media (max-width: 576px) {
+        main {
+          width: min(700px, calc(100vw - 50px));
+          padding-top: 50px;
+        }
+
+        .name-row {
+          grid-template-columns: 1fr;
+        }
+
+        label,
+        .question-title,
+        h2 {
+          font-size: 1.125rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="logo" aria-label="Auris Studio logo">A</div>
+      <h1>Auris Studio Recruitment Interview Introduction</h1>
+
+      <p>Hi, and thank you for your interest in working with Auris Studio.</p>
+      <p>
+        Before we move forward, we'd like to learn more about you, your creative experience,
+        and how you work with teams and clients. There are no right or wrong answers. Just
+        answer honestly.
+      </p>
+
+      <form id="auris-editor-form" action="https://formsubmit.co/aurisstudio67@gmail.com" method="POST" enctype="multipart/form-data">
+        <div class="form-content">
+          <input type="hidden" name="_subject" id="subjectField" value="New Auris Studio Application" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" id="nextField" value="" />
+          <div class="name-row">
+            <div class="field">
+              <label for="firstName">First name <span class="required">*</span></label>
+              <input id="firstName" name="firstName" type="text" placeholder="First name" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="lastName">Last name <span class="required">*</span></label>
+              <input id="lastName" name="lastName" type="text" placeholder="Last name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="question">
+            <label class="question-title" for="role">
+              1. Which type of role do you want? <span class="required">*</span>
+            </label>
+            <select id="role" name="role" required>
+              <option value="editor">Editor</option>
+              <option value="client-finder">Client Finder</option>
+              <option value="manager">Manager</option>
+            </select>
+          </div>
+
+          <section aria-labelledby="editing-experience">
+            <h2 id="editing-experience">Editor Experience Questions</h2>
+            <div id="experience-questions"></div>
+          </section>
+
+          <section aria-labelledby="reliability">
+            <h2 id="reliability">Reliability &amp; Dedication Questions</h2>
+            <div id="reliability-questions"></div>
+          </section>
+
+          <section aria-labelledby="growth">
+            <h2 id="growth">Growth Mindset Questions</h2>
+            <div id="growth-questions"></div>
+          </section>
+
+          <section aria-labelledby="final">
+            <h2 id="final">Final Questions</h2>
+            <div id="final-questions"></div>
+          </section>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Submit</button>
+          <div class="message" id="message" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="thanks" aria-live="polite">
+          <h2>Thanks for contacting us!</h2>
+          <p>We'll be in touch today.</p>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      const roleQuestions = {
+        "editor": {
+          title: "Editor",
+          groups: {
+            "experience-questions": [
+              "Tell us about yourself and your editing journey.",
+              "How long have you been editing professionally?",
+              "Which editing software do you use most often?",
+              { text: "Upload one sample video edit from your gallery or files.", type: "file", accept: "video/*" },
+              "What type of content do you enjoy editing the most?",
+              "Can you share your three best projects and explain your role in each?"
+            ],
+            "reliability-questions": [
+              "How many clients are you currently working with?",
+              "How many hours per week can you realistically dedicate to Auris Studio?",
+              "Have you ever missed a deadline? If yes, what happened and how did you handle it?",
+              "When a client requests multiple revisions, how do you respond?",
+              "What would you do if you realized you could not deliver a project on time?",
+              "Have you ever worked as part of a team before? What was your experience like?",
+              "What motivates you to continue editing during difficult periods?",
+              "Why are you interested in joining Auris Studio instead of remaining fully freelance?",
+              "Where do you see yourself in the next 12 months as an editor?"
+            ],
+            "growth-questions": [
+              "What editing skill are you currently trying to improve?",
+              "How do you stay updated with editing trends and techniques?",
+              "How do you react when someone critiques your edit?"
+            ]
+          }
+        },
+        "client-finder": {
+          title: "Client Finder",
+          groups: {
+            "experience-questions": [
+              "Tell us about yourself and your client-finding experience.",
+              "How long have you been finding or closing clients professionally?",
+              "Which platforms or methods do you use to find leads?",
+              { text: "Upload a short video explaining your client outreach approach.", type: "file", accept: "video/*" },
+              "What type of clients are you best at finding?",
+              "Can you share your three best client wins and explain your role in each?"
+            ],
+            "reliability-questions": [
+              "How many clients or businesses are you currently reaching out to weekly?",
+              "How many hours per week can you realistically dedicate to Auris Studio?",
+              "Have you ever failed to meet an outreach or sales target? If yes, what happened and how did you handle it?",
+              "When a lead says no or asks many questions, how do you respond?",
+              "What would you do if your outreach was not getting replies?",
+              "Have you ever worked with a team to pass leads, book calls, or close deals? What was your experience like?",
+              "What motivates you to keep searching for clients during slow periods?",
+              "Why are you interested in joining Auris Studio instead of working fully freelance?",
+              "Where do you see yourself in the next 12 months as a client finder?"
+            ],
+            "growth-questions": [
+              "What sales or outreach skill are you currently trying to improve?",
+              "How do you stay updated with lead generation and client acquisition methods?",
+              "How do you react when someone critiques your pitch or outreach style?"
+            ]
+          }
+        },
+        "manager": {
+          title: "Manager",
+          groups: {
+            "experience-questions": [
+              "Tell us about yourself and your management experience.",
+              "How long have you managed people, projects, or creative teams professionally?",
+              "Which tools do you use for planning, communication, or tracking work?",
+              { text: "Upload a short video explaining how you manage a team or project.", type: "file", accept: "video/*" },
+              "What type of team or workflow do you manage best?",
+              "Can you share your three best management examples and explain your role in each?"
+            ],
+            "reliability-questions": [
+              "How many people or projects are you currently managing?",
+              "How many hours per week can you realistically dedicate to Auris Studio?",
+              "Have you ever missed a management deadline? If yes, what happened and how did you handle it?",
+              "When a client or team member requests multiple changes, how do you respond?",
+              "What would you do if your team could not deliver a project on time?",
+              "Have you ever worked with editors, designers, writers, or sales people as part of a team?",
+              "What motivates you to stay organized during stressful periods?",
+              "Why are you interested in joining Auris Studio as a manager?",
+              "Where do you see yourself in the next 12 months as a manager?"
+            ],
+            "growth-questions": [
+              "What management skill are you currently trying to improve?",
+              "How do you stay updated with workflow, team, or productivity systems?",
+              "How do you react when someone critiques your management style?"
+            ]
+          }
+        }
+      };
+
+      const finalQuestions = [
+        "Write your email",
+        { text: "Submit your portfolio link (if you have)", type: "url", required: false },
+        "Submit your number"
+      ];
+
+      const roleSelect = document.querySelector("#role");
+      const sectionTitle = document.querySelector("#editing-experience");
+
+      function renderQuestions() {
+        const selectedRole = roleQuestions[roleSelect.value];
+        const groups = {
+          ...selectedRole.groups,
+          "final-questions": finalQuestions
+        };
+        let questionNumber = 2;
+
+        sectionTitle.textContent = `${selectedRole.title} Experience Questions`;
+
+        ["experience-questions", "reliability-questions", "growth-questions", "final-questions"].forEach((containerId) => {
+          const container = document.querySelector(`#${containerId}`);
+          container.innerHTML = "";
+
+          groups[containerId].forEach((item) => {
+            const question = typeof item === "string" ? { text: item, type: "text", required: true } : { required: true, ...item };
+            const currentNumber = questionNumber;
+            const id = `question-${currentNumber}`;
+            const wrapper = document.createElement("div");
+            const inputType = question.text.includes("email") ? "email" : question.text.includes("portfolio") ? "url" : question.type;
+            const accept = question.accept ? ` accept="${question.accept}"` : "";
+            const required = question.required ? " required" : "";
+            const requiredMarker = question.required ? ' <span class="required">*</span>' : "";
+
+            wrapper.className = "question";
+            wrapper.innerHTML = `
+              <label class="question-title" for="${id}">
+                ${currentNumber}. ${question.text}${requiredMarker}
+              </label>
+              <input id="${id}" name="${id}" type="${inputType}" placeholder="${currentNumber}"${accept}${required} />
+            `;
+
+            container.appendChild(wrapper);
+            questionNumber += 1;
+          });
+        });
+      }
+
+      roleSelect.addEventListener("change", renderQuestions);
+      renderQuestions();
+
+      const form = document.querySelector("#auris-editor-form");
+      const message = document.querySelector("#message");
+      const subjectField = document.querySelector("#subjectField");
+      const nextField = document.querySelector("#nextField");
+
+      // Build the redirect-back URL (strips any old query string first).
+      const baseUrl = window.location.origin + window.location.pathname;
+      nextField.value = baseUrl + "?submitted=true";
+
+      form.addEventListener("submit", (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          message.textContent = "Please complete all required fields.";
+          form.reportValidity();
+          return;
+        }
+
+        // Give every applicant's email a unique subject line so Gmail
+        // doesn't group multiple submissions into one conversation thread.
+        const first = document.querySelector("#firstName").value.trim();
+        const last = document.querySelector("#lastName").value.trim();
+        const role = document.querySelector("#role").value;
+        const stamp = new Date().toLocaleString("en-GB", {
+          day: "2-digit",
+          month: "short",
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+        subjectField.value = `New Application: ${first} ${last} (${role}) - ${stamp}`;
+
+        message.textContent = "Submitting...";
+        // No event.preventDefault() here: let the browser do a normal
+        // multipart/form-data POST so the uploaded video is reliably attached.
+      });
+
+      // After FormSubmit redirects back here with ?submitted=true, show the
+      // thank-you screen instead of the form.
+      if (new URLSearchParams(window.location.search).get("submitted") === "true") {
+        form.classList.add("submitted");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        // Clean the URL so refreshing the page doesn't re-show the thank-you state.
+        window.history.replaceState({}, document.title, baseUrl);
+      }
+    </script>
+  </body>
+</html>
